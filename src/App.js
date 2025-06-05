@@ -30,7 +30,6 @@ function MyButton() {
             <p>Clicked {count} times</p>
             <img src={logo} className='App-logo' alt='logo'/>
           </div>
-          
         )}
     </div>
   )
@@ -75,6 +74,7 @@ export default function MyApp() {
       <div className='welcome'>
           <h1>Welcome to my app</h1>
           {/* <img src={logo} className='App-logo' alt='logo'/> */}
+          <MyButton/>
           <MyButton/>
           <AboutPage/>
           <ul>{listItems}</ul>
