@@ -34,6 +34,11 @@ function MyButton() {
     </div>
   )
 }
+function MySecondButton({count, onClick}) {
+  return (
+    <button onClick={onClick}>Clicked {count} times</button>
+  );
+}
 
 
 
@@ -44,7 +49,10 @@ const styleObject = {
 };
 
 export default function MyApp() {
-  
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
   const listItems = products.map(product => 
     <li 
       key={product.id}
@@ -76,6 +84,8 @@ export default function MyApp() {
           {/* <img src={logo} className='App-logo' alt='logo'/> */}
           <MyButton/>
           <MyButton/>
+          <MySecondButton count={count} onClick={handleClick}/>
+          <MySecondButton count={count} onClick={handleClick}/>
           <AboutPage/>
           <ul>{listItems}</ul>
       </div>
